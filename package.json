@@ -15,7 +15,12 @@
     "idoc": {
         "theme": "default",
         "md": [
-            "首页.md"
+            "首页.md",
+            {
+                "React": [
+                    "github.md"
+                ]
+            }
         ]
     }
 }

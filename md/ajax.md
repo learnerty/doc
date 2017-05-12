@@ -69,7 +69,7 @@ dataType:'jsonp',
 jsonp:'callback'
 ```
 
-#### fetch
+## fetch
 es6的语法 成功 .then,失败 .catch
 ```js
 fetch('地址',method:'POST',body:'数据')
@@ -83,7 +83,7 @@ fetch('https://api.github.com/users/learnerty')  //请求完成
   })
 ```
 
-#### axios
+## axios
 装包 `npm install axios`
 ```js
 axios.get('https://api.github.com/users/learnerty')

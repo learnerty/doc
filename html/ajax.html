@@ -35,7 +35,7 @@
 <div class="container">
 
     <div class="page-toc">
-        <ul><li><a href="#t0js原生AJAX">js原生AJAX</a><ul><li><a href="#t1GET">GET</a></li><li><a href="#t2POST">POST</a></li></ul></li><li><a href="#t3jqAJAX">jqAJAX</a><ul><li><a href="#t4链式操作+POST">链式操作+POST</a></li><li><a href="#t5fetch">fetch</a></li><li><a href="#t6axios">axios</a></li></ul></li></ul>
+        <ul><li><a href="#t0js原生AJAX">js原生AJAX</a><ul><li><a href="#t1GET">GET</a></li><li><a href="#t2POST">POST</a></li></ul></li><li><a href="#t3jqAJAX">jqAJAX</a><ul><li><a href="#t4链式操作+POST">链式操作+POST</a></li></ul></li><li><a href="#t5fetch">fetch</a></li><li><a href="#t6axios">axios</a></li></ul>
     </div>
     
     <div class="content markdown-body">
@@ -98,7 +98,7 @@ xml.send(<span class="hljs-built_in">JSON</span>.stringify(data));   <span class
 <pre><code class="lang-js">dataType:<span class="hljs-string">&apos;jsonp&apos;</span>,
 <span class="hljs-attr">jsonp</span>:<span class="hljs-string">&apos;callback&apos;</span>
 </code></pre>
-<h4 id="t5fetch">fetch <a href="#t5fetch"> # </a></h4>
+<h2 id="t5fetch">fetch <a href="#t5fetch"> # </a></h2>
 <p>es6&#x7684;&#x8BED;&#x6CD5; &#x6210;&#x529F; .then,&#x5931;&#x8D25; .catch</p>
 <pre><code class="lang-js">fetch(<span class="hljs-string">&apos;&#x5730;&#x5740;&apos;</span>,<span class="hljs-attr">method</span>:<span class="hljs-string">&apos;POST&apos;</span>,<span class="hljs-attr">body</span>:<span class="hljs-string">&apos;&#x6570;&#x636E;&apos;</span>)
 fetch(<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apos;</span>)  <span class="hljs-comment">//&#x8BF7;&#x6C42;&#x5B8C;&#x6210;</span>
@@ -110,7 +110,7 @@ fetch(<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apo
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;parsing failed&apos;</span>, ex)
   })
 </code></pre>
-<h4 id="t6axios">axios <a href="#t6axios"> # </a></h4>
+<h2 id="t6axios">axios <a href="#t6axios"> # </a></h2>
 <p>&#x88C5;&#x5305; <code>npm install axios</code></p>
 <pre><code class="lang-js">axios.get(<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apos;</span>)
   .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(res))

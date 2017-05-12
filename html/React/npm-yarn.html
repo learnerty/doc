@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>doc</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                doc
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">首页</a></li><li><a href="#"><span></span>React</a><ul><li><a href="../../html/React/github.html">github</a></li><li class="active"><a href="../../html/React/npm-yarn.html">npm-yarn</a></li><li><a href="../../html/React/es6.html">es6</a></li><li><a href="../../html/React/react.html">react</a></li></ul></li><li><a href="../../html/ajax.html">ajax</a></li><li><a href="../../html/ui.html">ui</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t02 npm yarn">2 npm yarn</a><ul><li><a href="#t1yarn">yarn</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t02 npm yarn">2 npm yarn <a href="#t02 npm yarn"> # </a></h2>
+<p>&#x521D;&#x59CB;&#x5316;node&#x9879;&#x76EE;  </p>
+<pre><code class="lang-bash">  npm init
+  &#x7B49;&#x540C;
+  yarn init
+</code></pre>
+<p>npm install jquery --save  &#x5B89;&#x88C5;jquery&#x63D2;&#x4EF6;  --save &#x5411;package.json&#x8BB0;&#x5F55;<br>&#x7B49;&#x540C;yarn add jquery</p>
+<p>npm install  &#x5B89;&#x88C5;&#x914D;&#x7F6E;&#x6587;&#x4EF6;package.json&#x8BB0;&#x5F55;&#x7684;&#x6240;&#x6709;&#x4F9D;&#x8D56;</p>
+<p>&#x7528;npm&#x88C5;&#x7684;&#x5305;&#xFF0C;&#x76F4;&#x63A5;require(&apos;&#x5305;&#x540D;&apos;)&#xFF0C;&#x5982;&#x679C;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x5305;&#xFF0C;&#x5219;require(&apos;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;/&#x5305;&#x540D;&apos;)</p>
+<p>&#x5B89;&#x88C5;&#x6307;&#x5B9A;&#x7248;&#x672C;&#x7684;&#x6700;&#x9AD8;&#x7248;&#x672C; npm install jquery@3.0 --save-dev    &#x4E00;&#x822C;&#x7528;&#x6765;&#x5B89;&#x88C5;&#x5F00;&#x53D1;&#x6240;&#x7528;&#x7684;<br>&#x7B49;&#x540C;yarn add -D jquery@3.0</p>
+<p>&#x5B89;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x6A21;&#x5757;</p>
+<pre><code class="lang-js">npm install [packagename] [--save]
+<span class="hljs-comment">//&#x5B89;&#x88C5;&#x5230;&#x4E86;node_modules</span>
+--save:&#x8BB0;&#x5F55;&#x5230;dependencies&#x5B57;&#x6BB5;&#x4E0B;
+--save-dev:&#x8BB0;&#x5F55;&#x5230;devDependencies&#x5B57;&#x6BB5;&#x4E0B;
+--global:&#x7F29;&#x5199;&#x4E3A; -g  &#x5168;&#x5C40;&#x5B89;&#x88C5;,&#x5B89;&#x88C5;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;
+</code></pre>
+<p>&#x5378;&#x8F7D;&#x6A21;&#x5757;</p>
+<pre><code class="lang-bash">  npm uninstall [packagename] [-g]  &#x4E0D;&#x662F;&#x5168;&#x5C40;&#x4E0D;&#x7528;&#x52A0;-g
+  &#x5378;&#x8F7D;&#x540E;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5728;package.json&#x91CC;&#x5220;&#x9664;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;
+</code></pre>
+<p>npm install -g create-react-app &#x5B89;&#x88C5;react&#x5F00;&#x53D1;&#x73AF;&#x5883;<br>create-react-app &#x540D;&#x79F0;  &#x521B;&#x5EFA;react&#x73AF;&#x5883;<br>create-react-app --version  &#x67E5;&#x770B;&#x7248;&#x672C;<br>create-react-app --help   &#x67E5;&#x770B;&#x5E2E;&#x52A9;<br>npm run start  &#x8FD0;&#x884C;<br>npm list -g &#x67E5;&#x770B;&#x5168;&#x5C40;&#x88C5;&#x7684;&#x5305;<br>npm install yarn -g  &#x5B89;&#x88C5;yarg</p>
+<h4 id="t1yarn">yarn <a href="#t1yarn"> # </a></h4>
+<pre><code>&#x5F00;&#x59CB;&#x65B0;&#x9879;&#x76EE; yarn init
+&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;&#x5305;
+yarn add [package]
+yarn add [package]@[version]
+yarn add [package]@[tag]
+&#x5347;&#x7EA7;&#x4F9D;&#x8D56;&#x5305;
+yarn upgrade [package]
+yarn upgrade [package]@[version]
+yarn upgrade [package]@[tag]
+&#x79FB;&#x9664;&#x4F9D;&#x8D56;&#x5305;
+yarn remove [package]
+&#x5B89;&#x88C5;&#x9879;&#x76EE;&#x7684;&#x5168;&#x90E8;&#x4F9D;&#x8D56;
+yarn&#x6216;&#x8005;yarn install
+</code></pre>
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

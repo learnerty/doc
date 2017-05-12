@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>doc</title>
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                doc
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">首页</a></li><li><a href="#"><span></span>React</a><ul><li><a href="../html/React/github.html">github</a></li><li><a href="../html/React/npm-yarn.html">npm-yarn</a></li><li><a href="../html/React/es6.html">es6</a></li><li><a href="../html/React/react.html">react</a></li></ul></li><li class="active"><a href="../html/ajax.html">ajax</a></li><li><a href="../html/ui.html">ui</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0js原生AJAX">js原生AJAX</a><ul><li><a href="#t1GET">GET</a></li><li><a href="#t2POST">POST</a></li></ul></li><li><a href="#t3jqAJAX">jqAJAX</a><ul><li><a href="#t4链式操作+POST">链式操作+POST</a></li><li><a href="#t5fetch">fetch</a></li><li><a href="#t6axios">axios</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0js&#x539F;&#x751F;AJAX">js&#x539F;&#x751F;AJAX <a href="#t0js&#x539F;&#x751F;AJAX"> # </a></h2>
+<h4 id="t1GET">GET <a href="#t1GET"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> xml = <span class="hljs-keyword">new</span> XMLHttpRequest();    <span class="hljs-comment">//&#x521B;&#x5EFA; XMLHttpRequest &#x5BF9;&#x8C61;</span>
+xml.onreadystatechange=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{  <span class="hljs-comment">//&#x5B58;&#x50A8;&#x51FD;&#x6570;,&#x6BCF;&#x5F53;readyState&#x5C5E;&#x6027;&#x6539;&#x53D8;&#x65F6;,&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">if</span>(xml.readyState===<span class="hljs-number">4</span>&amp;&amp;xml.status===<span class="hljs-number">200</span>){  <span class="hljs-comment">//readyState=4&#x4EE3;&#x8868;&#x8BF7;&#x6C42;&#x4EE5;&#x5B8C;&#x6210;&#x4E14;&#x54CD;&#x5E94;&#x5DF2;&#x5C31;&#x7EEA;&#xFF0C;status=200&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x6210;&#x529F;</span>
+    <span class="hljs-built_in">console</span>.log(xml.responseText);   <span class="hljs-comment">//responseText&#x83B7;&#x5F97;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x7684;&#x54CD;&#x5E94;&#x6570;&#x636E;</span>
+  }
+}
+xml.open(<span class="hljs-string">&apos;GET&apos;</span>,<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apos;</span>,<span class="hljs-literal">true</span>);   <span class="hljs-comment">//&#x6253;&#x5F00;</span>
+xml.open(<span class="hljs-string">&apos;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&apos;</span>,<span class="hljs-string">&apos;&#x5730;&#x5740;&apos;</span>,&#x662F;&#x5426;&#x5F02;&#x6B65;(<span class="hljs-literal">true</span>&#x6216;<span class="hljs-literal">false</span>));
+xml.send();   <span class="hljs-comment">//&#x53D1;&#x9001;</span>
+</code></pre>
+<p>readyState</p>
+<pre><code>&#x5B58;&#x6709; XMLHttpRequest &#x7684;&#x72B6;&#x6001;&#x3002;&#x4ECE; 0 &#x5230; 4 &#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;
+0: &#x8BF7;&#x6C42;&#x672A;&#x521D;&#x59CB;&#x5316;
+1: &#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5DF2;&#x5EFA;&#x7ACB;
+2: &#x8BF7;&#x6C42;&#x5DF2;&#x63A5;&#x6536;
+3: &#x8BF7;&#x6C42;&#x5904;&#x7406;&#x4E2D;
+4: &#x8BF7;&#x6C42;&#x5DF2;&#x5B8C;&#x6210;&#xFF0C;&#x4E14;&#x54CD;&#x5E94;&#x5DF2;&#x5C31;&#x7EEA;
+</code></pre><p>&#x8BF7;&#x6C42;&#x5305;&#x62EC;&#x8BF7;&#x6C42;&#x5934;&#x548C;&#x8BF7;&#x6C42;&#x4F53;&#xFF0C;&#x54CD;&#x5E94;&#x5305;&#x62EC;&#x54CD;&#x5E94;&#x5934;&#x548C;&#x76F8;&#x5E94;&#x4F53;&#xFF0C;&#x5934;&#x5305;&#x542B;&#x5BA2;&#x6237;&#x7AEF;&#x6216;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x4F53;&#x5305;&#x62EC;&#x53D1;&#x9001;&#x6216;&#x8FD4;&#x56DE;&#x7684;&#x5177;&#x4F53;&#x6570;&#x636E;</p>
+<h4 id="t2POST">POST <a href="#t2POST"> # </a></h4>
+<pre><code class="lang-js">xml.open(<span class="hljs-string">&apos;POST&apos;</span>,<span class="hljs-string">&apos;&#x8DEF;&#x5F84;&apos;</span>,<span class="hljs-literal">true</span>)
+xml.setRequestHeader(<span class="hljs-string">&quot;Content-type&quot;</span>,<span class="hljs-string">&quot;application/json&quot;</span>);  <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x8BF7;&#x6C42;&#x5934;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;json&#x683C;&#x5F0F;</span>
+<span class="hljs-keyword">let</span> data = {   <span class="hljs-comment">//&#x8981;&#x4F20;&#x7684;&#x6570;&#x636E;</span>
+  &#x540D;&#x79F0;: <span class="hljs-string">&apos;&#x6570;&#x636E;&apos;</span>
+}
+xml.send(<span class="hljs-built_in">JSON</span>.stringify(data));   <span class="hljs-comment">//&#x8F6C;&#x6210;json&#x683C;&#x5F0F;&#x53D1;&#x9001;</span>
+</code></pre>
+<h2 id="t3jqAJAX">jqAJAX <a href="#t3jqAJAX"> # </a></h2>
+<pre><code class="lang-js">$.ajax({
+  <span class="hljs-attr">type</span>:<span class="hljs-string">&apos;GET&apos;</span>,<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x4E3A;GET jq&#x7248;&#x672C;&#x9AD8;&#x4E8E;1.9&#x65B0;&#x589E;&#x4E86;method</span>
+  url:<span class="hljs-string">&apos;https://cnodejs.org/api/v1/topics&apos;</span>,  <span class="hljs-comment">//&#x8DEF;&#x5F84;</span>
+  success:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{  <span class="hljs-comment">//success&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x628A;&#x540E;&#x53F0;&#x8FD4;&#x56DE;&#x7684;json&#x8F6C;&#x6362;&#x6210;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-built_in">console</span>.log(data);
+  }
+  error:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{  <span class="hljs-comment">//&#x5931;&#x8D25;</span>
+    <span class="hljs-built_in">console</span>.log(error);
+  }
+})
+</code></pre>
+<h4 id="t4&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;+POST">&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;+POST <a href="#t4&#x94FE;&#x5F0F;&#x64CD;&#x4F5C;+POST"> # </a></h4>
+<pre><code class="lang-js">$.ajax({
+  <span class="hljs-attr">method</span>:<span class="hljs-string">&apos;POST&apos;</span>,  <span class="hljs-comment">//&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</span>
+  dataType:<span class="hljs-string">&apos;json&apos;</span>,  <span class="hljs-comment">//&#x671F;&#x671B;&#x540E;&#x53F0;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+  contentType:<span class="hljs-string">&apos;application/json&apos;</span>, <span class="hljs-comment">//&#x53D1;&#x5F80;&#x540E;&#x53F0;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+  url:<span class="hljs-string">&apos;https://cnodejs.org/api/v1/accesstoken&apos;</span>,   <span class="hljs-comment">//&#x63D0;&#x4EA4;&#x5730;&#x5740;</span>
+  data:<span class="hljs-built_in">JSON</span>.stringify({<span class="hljs-attr">accesstoken</span>: <span class="hljs-string">&apos;3f77acb1-d753-4393-b784-44913190e6a8&apos;</span>})   <span class="hljs-comment">//&#x53D1;&#x7ED9;&#x540E;&#x53F0;&#x7684;&#x6570;&#x636E;</span>
+}).done(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{   <span class="hljs-comment">//.done  &#x6210;&#x529F;&#x6267;&#x884C;</span>
+  <span class="hljs-built_in">console</span>.log(data);
+}).fail(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{   <span class="hljs-comment">//.fail  &#x5931;&#x8D25;&#x6267;&#x884C;</span>
+  <span class="hljs-built_in">console</span>.log(err);
+}).always(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{    <span class="hljs-comment">//.always  &#x65E0;&#x8BBA;&#x6210;&#x529F;&#x5931;&#x8D25;&#x90FD;&#x6267;&#x884C;</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ajax&apos;</span>);
+})
+</code></pre>
+<p>AJAX&#x4E0D;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x540E;&#x53F0;&#x8FDB;&#x884C;&#x86C7;&#x8005;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x6709;&#x4E9B;&#x9700;&#x8981;&#x524D;&#x53F0;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF0C;&#x5728;jq&#x4E2D;&#xFF0C;&#x9700;&#x6DFB;&#x52A0;</p>
+<pre><code class="lang-js">dataType:<span class="hljs-string">&apos;jsonp&apos;</span>,
+<span class="hljs-attr">jsonp</span>:<span class="hljs-string">&apos;callback&apos;</span>
+</code></pre>
+<h4 id="t5fetch">fetch <a href="#t5fetch"> # </a></h4>
+<p>es6&#x7684;&#x8BED;&#x6CD5; &#x6210;&#x529F; .then,&#x5931;&#x8D25; .catch</p>
+<pre><code class="lang-js">fetch(<span class="hljs-string">&apos;&#x5730;&#x5740;&apos;</span>,<span class="hljs-attr">method</span>:<span class="hljs-string">&apos;POST&apos;</span>,<span class="hljs-attr">body</span>:<span class="hljs-string">&apos;&#x6570;&#x636E;&apos;</span>)
+fetch(<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apos;</span>)  <span class="hljs-comment">//&#x8BF7;&#x6C42;&#x5B8C;&#x6210;</span>
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>) </span>{   <span class="hljs-comment">//&#x62FF;&#x5230;&#x540E;&#x53F0;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;</span>
+    <span class="hljs-keyword">return</span> response.json()    <span class="hljs-comment">//&#x8F6C;&#x6362;&#x6210;json&#x6570;&#x636E;</span>
+  }).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">json</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;parsing json&apos;</span>, json)  
+  }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ex</span>) </span>{   <span class="hljs-comment">//&#x5931;&#x8D25;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;parsing failed&apos;</span>, ex)
+  })
+</code></pre>
+<h4 id="t6axios">axios <a href="#t6axios"> # </a></h4>
+<p>&#x88C5;&#x5305; <code>npm install axios</code></p>
+<pre><code class="lang-js">axios.get(<span class="hljs-string">&apos;https://api.github.com/users/learnerty&apos;</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(res))
+  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> alert(err))
+axios.post(<span class="hljs-string">&apos;https://cnodejs.org/api/v1/accesstoken&apos;</span>,{<span class="hljs-attr">accesstoken</span>:token})
+</code></pre>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

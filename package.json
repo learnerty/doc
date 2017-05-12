@@ -19,7 +19,8 @@
             {
                 "React": [
                     "github.md",
-                    "npm-yarn.md"
+                    "npm-yarn.md",
+                    "es6.md"
                 ]
             }
         ]

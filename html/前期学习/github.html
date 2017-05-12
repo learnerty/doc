@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>doc</title>
+        
+    <link rel="stylesheet" type="text/css" href="../../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                doc
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../../index.html">首页</a></li><li><a href="#"><span></span>前期学习</a><ul><li class="active"><a href="../../html/前期学习/github.html">github</a></li><li><a href="../../html/前期学习/npm-yarn.html">npm-yarn</a></li><li><a href="../../html/前期学习/es6.html">es6</a></li></ul></li><li><a href="../../html/react.html">react</a></li><li><a href="../../html/ajax.html">ajax</a></li><li><a href="../../html/ui.html">ui</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t01 准备">1 准备</a><ul><li><a href="#t1修改后上传更新">修改后上传更新</a></li><li><a href="#t2atom 装包命令">atom 装包命令</a></li><li><a href="#t3本地项目上传">本地项目上传</a></li><li><a href="#t4分支">分支</a></li><li><a href="#t5安装node">安装node</a></li><li><a href="#t6安装idoc">安装idoc</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t01 &#x51C6;&#x5907;">1 &#x51C6;&#x5907; <a href="#t01 &#x51C6;&#x5907;"> # </a></h2>
+<p>sudo apt-get install git curl atom   &#x4E0B;&#x8F7D;git, curl, atom&#x8F6F;&#x4EF6;<br>sudo apt-get update   &#x66F4;&#x65B0;<br>git clone [url] &#x514B;&#x9686;&#x5230;&#x672C;&#x5730;<br>git status  &#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x72B6;&#x6001;<br>git log  &#x67E5;&#x770B;&#x4ED3;&#x5E93;&#x65E5;&#x5FD7;</p>
+<h4 id="t1&#x4FEE;&#x6539;&#x540E;&#x4E0A;&#x4F20;&#x66F4;&#x65B0;">&#x4FEE;&#x6539;&#x540E;&#x4E0A;&#x4F20;&#x66F4;&#x65B0; <a href="#t1&#x4FEE;&#x6539;&#x540E;&#x4E0A;&#x4F20;&#x66F4;&#x65B0;"> # </a></h4>
+<p>git add .  &#x6DFB;&#x52A0;&#x5230;git &#x6682;&#x65F6;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;<br>git commit -m &apos;message&apos;  &#x505A;&#x7248;&#x672C;<br>git push   &#x63D0;&#x4EA4;</p>
+<h4 id="t2atom &#x88C5;&#x5305;&#x547D;&#x4EE4;">atom &#x88C5;&#x5305;&#x547D;&#x4EE4; <a href="#t2atom &#x88C5;&#x5305;&#x547D;&#x4EE4;"> # </a></h4>
+<p>apm install [packagename]<br>&#x5305;&#xFF1A;
+emmet<br>open-in-browser<br>autocomplete-paths<br>language-babel</p>
+<p>&#x624B;&#x52A8;&#x521B;&#x5EFA;.gitignore&#x91CC;&#x9762;&#x5199;&#x540D;&#x79F0;,&#x5FFD;&#x7565;&#x4E0D;&#x60F3;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x6587;&#x4EF6;&#x5939;</p>
+<h4 id="t3&#x672C;&#x5730;&#x9879;&#x76EE;&#x4E0A;&#x4F20;">&#x672C;&#x5730;&#x9879;&#x76EE;&#x4E0A;&#x4F20; <a href="#t3&#x672C;&#x5730;&#x9879;&#x76EE;&#x4E0A;&#x4F20;"> # </a></h4>
+<p>ssh-keygen &#x751F;&#x6210;&#x7535;&#x8111;&#x94A5;&#x5319; .put&#x516C;&#x6709;,&#x5C06;&#x91CC;&#x9762;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230;github&#x7684;SSH and GPG keys<br>git init &#x521D;&#x59CB;&#x5316;&#x6210;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;<br>git remote add origin &#x5730;&#x5740;<br>git push -u origin master</p>
+<h4 id="t4&#x5206;&#x652F;">&#x5206;&#x652F; <a href="#t4&#x5206;&#x652F;"> # </a></h4>
+<p>&#x5207;&#x6362;&#x5206;&#x652F;&#x4E4B;&#x524D;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x505A;&#x6210;&#x7248;&#x672C;&#x624D;&#x80FD;&#x5207;&#x6362;&#x5206;&#x652F;<br>git branch &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;&#x548C;&#x5F53;&#x524D;&#x5206;&#x652F; <code>*</code>&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x5206;&#x652F;<br>git branch dev &#x521B;&#x5EFA;&#x65B0;&#x7684;dev&#x5206;&#x652F;<br>git checkout dev  &#x5207;&#x6362;&#x5230;dev&#x5206;&#x652F;<br>git push -u origin dev &#x5411;&#x8FDC;&#x7AEF;&#x63A8;&#x9001;dev&#x5206;&#x652F;<br>git merge dev &#x628A;dev&#x5206;&#x652F;&#x4E0A;&#x9886;&#x5148;&#x7684;&#x64CD;&#x4F5C;&#x62C9;&#x53D6;&#x8FC7;&#x6765;<br>git branch -d dev &#x5220;&#x9664;&#x672C;&#x5730;dev&#x5206;&#x652F;&#xFF0C;&#x4E0D;&#x80FD;&#x5220;master&#x5206;&#x652F;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x80FD;&#x5220;&#x5F53;&#x524D;&#x6240;&#x5728;&#x5206;&#x652F;<br>git push origin :dev  &#x5220;&#x9664;&#x8FDC;&#x7AEF;&#x7684;dev&#x5206;&#x652F;</p>
+<p>gh-pages&#x662F;&#x4E00;&#x4E2A;&#x5341;&#x5206;&#x7279;&#x6B8A;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x88AB;&#x8BBF;&#x95EE;&#xFF0C;&#x5730;&#x5740;&#x4E3A;learnerty.github.io/&#x4ED3;&#x5E93;&#x540D;</p>
+<h4 id="t5&#x5B89;&#x88C5;node">&#x5B89;&#x88C5;node <a href="#t5&#x5B89;&#x88C5;node"> # </a></h4>
+<p>&#x5148;&#x5728;github&#x4E0A;&#x5B89;&#x88C5;nvm  </p>
+<p>nvm ls-remote  &#x4ECE;&#x8FDC;&#x7AEF;&#x67E5;&#x770B;nodejs&#x7684;&#x7248;&#x672C;<br>nvm install &#x7248;&#x672C;&#x53F7;  &#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x6700;&#x65B0;&#x7684;nodejs&#x7248;&#x672C;<br>&#x81EA;&#x52A8;&#x4F1A;&#x628A;npm&#x88C5;&#x4E0A;&#xFF0C;npm&#x662F;&#x6700;&#x5927;&#x7684;nodejs&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;<br>nvm use &#x7248;&#x672C; &#x5207;&#x6362;node&#x7684;&#x7248;&#x672C;<br>nvm alias default &#x7248;&#x672C;  &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;&#x7248;&#x672C;<br>nvm uninstall &#x7248;&#x672C;  &#x5378;&#x8F7D;nodejs</p>
+<h4 id="t6&#x5B89;&#x88C5;idoc">&#x5B89;&#x88C5;idoc <a href="#t6&#x5B89;&#x88C5;idoc"> # </a></h4>
+<ol>
+<li>npm install idoc -g</li>
+<li>idoc init &#x521D;&#x59CB;&#x5316;<pre><code>? Package name
+&gt;&gt; Must be only lowercase letters, numbers, dashes or dots, and start with lowercase letter.
+tian@tian-pc:~/Desktop/doc$ idoc init
+? Package name doc
+? Version 1.0.0
+? Description &#x6211;&#x7684;&#x7B14;&#x8BB0;
+? keywords note
+? Licenses MIT
+? Choose a theme. default
+? Author learnerty &lt;1083089451@qq.com&gt;
+</code></pre></li>
+<li>idoc build &#x751F;&#x6210;</li>
+</ol>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

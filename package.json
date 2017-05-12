@@ -17,13 +17,15 @@
         "md": [
             "首页.md",
             {
-                "React": [
+                "前期学习": [
                     "github.md",
                     "npm-yarn.md",
-                    "es6.md",
-                    "react.md"
+                    "es6.md"
                 ]
-            }
+            },
+            "react.md",
+            "ajax.md",
+            "ui.md"
         ]
     }
 }

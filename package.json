@@ -18,9 +18,14 @@
             "首页.md",
             {
                 "React": [
-                    "github.md"
+                    "github.md",
+                    "npm-yarn.md",
+                    "es6.md",
+                    "react.md"
                 ]
             }
+            "ajax.md",
+            "ui.md"
         ]
     }
 }

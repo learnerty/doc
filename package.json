@@ -22,8 +22,7 @@
                     "npm-yarn.md",
                     "es6.md"
                 ]
-            },
-            "react.md",
+            }
             "ajax.md",
             "ui.md"
         ]

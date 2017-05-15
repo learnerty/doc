@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>doc</title>
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                doc
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">首页</a></li><li><a href="#"><span></span>前期学习</a><ul><li><a href="../html/前期学习/github.html">github</a></li><li><a href="../html/前期学习/npm-yarn.html">npm-yarn</a></li><li><a href="../html/前期学习/es6.html">es6</a></li></ul></li><li><a href="../html/react.html">react</a></li><li><a href="../html/ajax.html">ajax</a></li><li><a href="../html/ui.html">ui</a></li><li class="active"><a href="../html/webpack.html">webpack</a></li></ul>    
+        </div>
+        
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0用配置文件配置(推荐)">用配置文件配置(推荐)</a><ul><li><a href="#t1packges.json">packges.json</a></li><li><a href="#t2webpack.config.js">webpack.config.js</a></li><li><a href="#t3添加css前缀">添加css前缀</a></li><li><a href="#t4打包图片">打包图片</a></li><li><a href="#t5把css分离到一个单独的文件">把css分离到一个单独的文件</a></li><li><a href="#t6自动生成一个html">自动生成一个html</a></li></ul></li><li><a href="#t7css预处理器">css预处理器</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <p>&#x5B89;&#x88C5;webpack<br>npm install -D webpack(&#x9879;&#x76EE;&#x5185;&#x5C40;&#x90E8;&#x5B89;&#x88C5;)<br>npm install -g webpack(&#x5168;&#x5C40;&#x5B89;&#x88C5;)</p>
+<p>&#x6253;&#x5305;(&#x5168;&#x5C40;&#x5B89;&#x88C5;webpack)<br>webpack src/index.js build/bundle.js --- webpack &#x5165;&#x53E3;&#x6587;&#x4EF6; &#x51FA;&#x53E3;&#x6587;&#x4EF6;<br>(&#x975E;&#x5168;&#x5C40;)<br>./node_modules/.bin/webpack &#x5165;&#x53E3;&#x6587;&#x4EF6; &#x51FA;&#x53E3;&#x6587;&#x4EF6;</p>
+<p>&#x5728;packges.json&#x914D;&#x7F6E;,&#x53EF;&#x4EE5;&#x6267;&#x884C;npm run bulid&#x6267;&#x884C;&#x6253;&#x5305;&#x64CD;&#x4F5C;    --watch&#x76D1;&#x542C;&#xFF0C;&#x66F4;&#x6539;&#x540E;&#x81EA;&#x52A8;&#x66F4;&#x65B0;</p>
+<pre><code>&quot;scripts&quot;:{
+  &quot;bulid&quot;: &quot;./node_modules/.bin/webpack src/index.js build/bundle.js --watch&quot;
+}
+</code></pre><h3 id="t0&#x7528;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;(&#x63A8;&#x8350;)">&#x7528;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;(&#x63A8;&#x8350;) <a href="#t0&#x7528;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;(&#x63A8;&#x8350;)"> # </a></h3>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x652F;&#x6301;es6 &#x548C;JSX &#x8BED;&#x6CD5;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5B89;&#x88C5;babel<br><code>npm install --save-dev babel-loader babel-core</code><br>&#x4F7F;&#x7528;es6&#x8BED;&#x6CD5;&#x9700;&#x8981;&#x88C5;&#x5305;babel-preset-env<br><code>npm install babel-preset-env --save-dev</code><br>&#x4F7F;&#x7528;JSX&#x8BED;&#x6CD5;&#x9700;&#x8981;&#x88C5;&#x5305;babel-preset-react<br><code>npm install --save-dev babel-preset-react</code><br>&#x8FD8;&#x8981;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;.babelrc  </p>
+<pre><code>{
+  &quot;presets&quot;: [&quot;env&quot;,&quot;react&quot;]
+}
+</code></pre><p>&#x8981;&#x5BFC;&#x5165;css&#x6587;&#x4EF6;&#x9700;&#x8981;&#x88C5;&#x4E24;&#x4E2A;&#x5305;&#xFF0C;&#x5982;&#x679C;&#x5B89;&#x88C5;&#x4E86;postcss-loader&#x5305;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x88C5;css-loader&#x5305;<br><code>npm i --save-dev style-loader css-loader</code></p>
+<h4 id="t1packges.json">packges.json <a href="#t1packges.json"> # </a></h4>
+<pre><code>&quot;scripts&quot;:{
+  &quot;bulid&quot;: &quot;./node_modules/.bin/webpack&quot;
+}
+</code></pre><h4 id="t2webpack.config.js">webpack.config.js <a href="#t2webpack.config.js"> # </a></h4>
+<pre><code>const path = require(&apos;path&apos;);   nodejs&#x7684;&#x6838;&#x5FC3;&#x6A21;&#x5757;
+var webpack = require(&apos;webpack&apos;);
+const ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
+module.exports = {   &#x6A21;&#x5757;&#x63A5;&#x53E3;
+  entry: &apos;./src/index.js&apos;,     &#x8981;&#x6253;&#x5305;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5165;&#x53E3;&#x6587;&#x4EF6;
+  output: {     &#x6253;&#x5305;&#x5230;&#x54EA;&#x91CC;&#xFF0C;&#x51FA;&#x53E3;&#x6587;&#x4EF6;
+    path: path.resolve(__dirname,&quot;build&quot;),  __dirname&#x4EE3;&#x8868;webpack.config.js&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;  &#x62FC;&#x63A5;build&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x5F62;&#x6210;&#x8DEF;&#x5F84;
+    filename: &quot;bundle.js&quot;,  &#x6587;&#x4EF6;&#x540D;
+    publicPath: &apos;build/&apos;   &#x516C;&#x5171;&#x8DEF;&#x5F84;&#xFF0C;&#x56FE;&#x7247;&#x7B49;&#x6253;&#x5305;&#x540E;&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x516C;&#x5171;&#x8DEF;&#x5F84;&#x6765;&#x83B7;&#x5F97;&#x6B63;&#x786E;&#x7684;&#x8DEF;&#x5F84;
+  },
+  watch: true,    &#x662F;&#x5426;&#x76D1;&#x542C;&#xFF0C;true&#x76D1;&#x542C;,false&#x4E0D;&#x76D1;&#x542C;
+  devtool: &quot;source-map&quot;,    &#x62A5;&#x9519;&#x62A5;&#x5230;&#x6E90;&#x4EE3;&#x7801;&#x91CC;
+  module: {   &#x6A21;&#x5757;
+    rules: [   &#x89C4;&#x5219;
+      { test: /\.js$/, exclude: /node_modules/, use: &quot;babel-loader&quot; }, &#x6253;&#x5305;&#x4EE5;.js&#x4E3A;&#x7ED3;&#x5C3E;&#x7684;,&#x5C31;&#x7528;babel-loader&#x5904;&#x7406;&#xFF0C;exclude&#x6392;&#x9664;node_modules&#x6587;&#x4EF6;&#x5939;
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: &quot;style-loader&quot;,
+          use: &quot;postcss-loader&quot;
+        })
+      },  &#x628A;css&#x5355;&#x72EC;&#x751F;&#x6210;&#x6587;&#x4EF6;,&#x6DFB;&#x52A0;css&#x524D;&#x7F00;
+      { test: /\.(jpe?g|png)$/, use: &quot;file-loader&quot; },  &#x6253;&#x5305;&#x56FE;&#x7247;
+      { test: /\.less$/,use: [ &apos;style-loader&apos;, &apos;postcss-loader&apos;,&apos;less-loader&apos; ] }  less
+    ]
+  },
+  plugins:[  &#x63D2;&#x4EF6;
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,   &#x4E0D;&#x8981;&#x8B66;&#x544A;
+        drop_console: false,    &#x5220;&#x6389;&#x6CE8;&#x91CA;
+      }
+    }),
+    new webpack.DefinePlugin({
+      &apos;process.env.NODE_ENV&apos;: &apos;&quot;production&quot;&apos;,   &#x751F;&#x4EA7;&#x73AF;&#x5883;
+    }),
+    new ExtractTextPlugin(&quot;styles.css&quot;),   &#x751F;&#x6210;&#x5355;&#x72EC;css&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF0C;&#x51FA;&#x53E3;&#x662F;output&#x5B9A;&#x4E49;&#x7684;&#x51FA;&#x53E3;
+    new HtmlWebpackPlugin({
+      template: &apos;template/index.html&apos;,   &#x6A21;&#x677F;html&#x6587;&#x4EF6;&#x53C2;&#x8003;&#x5730;&#x5740;
+      filename: path.resolve(__dirname,&apos;index.html&apos;)  &#x751F;&#x6210;&#x6A21;&#x677F;&#x7684;&#x4F4D;&#x7F6E;,webpack.config.js&#x6587;&#x4EF6;&#x540C;&#x7EA7;&#x7684;index.html&#x9875;&#x9762;
+    })
+  ]
+}
+</code></pre><h4 id="t3&#x6DFB;&#x52A0;css&#x524D;&#x7F00;">&#x6DFB;&#x52A0;css&#x524D;&#x7F00; <a href="#t3&#x6DFB;&#x52A0;css&#x524D;&#x7F00;"> # </a></h4>
+<p>&#x5148;&#x88C5;&#x5305;<br><code>npm i -D  postcss-loader</code><br><code>npm i -D autoprefixer</code><br><code>npm i -D cssnano</code><br>&#x65B0;&#x5EFA;postcss.config.js&#x6587;&#x4EF6;</p>
+<pre><code>module.exports = {
+  plugins: [
+    require(&apos;autoprefixer&apos;),   &#x5BFC;&#x5165;autoprefixer&#xFF0C;&#x6DFB;&#x52A0;css&#x524D;&#x7F00;
+    require(&apos;cssnano&apos;)  &#x5BFC;&#x5165;cssnano,&#x538B;&#x7F29;css&#x6837;&#x5F0F;
+  ]
+}
+</code></pre><h4 id="t4&#x6253;&#x5305;&#x56FE;&#x7247;">&#x6253;&#x5305;&#x56FE;&#x7247; <a href="#t4&#x6253;&#x5305;&#x56FE;&#x7247;"> # </a></h4>
+<p>&#x88C5;&#x5305;<br><code>npm install --save-dev file-loader</code></p>
+<h4 id="t5&#x628A;css&#x5206;&#x79BB;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;">&#x628A;css&#x5206;&#x79BB;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6; <a href="#t5&#x628A;css&#x5206;&#x79BB;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;"> # </a></h4>
+<p>&#x88C5;&#x5305;<br><code>npm install --save-dev extract-text-webpack-plugin</code></p>
+<h4 id="t6&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;html">&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;html <a href="#t6&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4E2A;html"> # </a></h4>
+<p>&#x88C5;&#x5305;<br><code>npm install --save-dev html-webpack-plugin</code></p>
+<h3 id="t7css&#x9884;&#x5904;&#x7406;&#x5668;">css&#x9884;&#x5904;&#x7406;&#x5668; <a href="#t7css&#x9884;&#x5904;&#x7406;&#x5668;"> # </a></h3>
+<p><code>less</code> &#x6587;&#x4EF6;&#x540E;&#x7F00;&#x662F;less<br>&#x88C5;&#x5305;
+<code>npm i -D less less-loader</code></p>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x5D4C;&#x5957;</li>
+<li>&#x652F;&#x6301;&#x53D8;&#x91CF;
+&#x4E8B;&#x4F8B;,&#x65B0;&#x5EFA;main.less<pre><code>@blue: &apos;#666&apos;;
+@opac: 1;
+.p{
+text-align: center;
+}
+.box{
+background-color: red;
+&amp;:hover{
+ background-color: #dd5555;
+}
+transition: all 1s;
+p{
+ font-size: 22px;
+ color: @blue;
+ opacity: @opac*0.5;
+ .p();
+}
+}
+</code></pre></li>
+</ol>
+<p><code>sass</code> &#x6587;&#x4EF6;&#x540E;&#x7F00;&#x662F;scss</p>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
